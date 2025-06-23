@@ -1,55 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Color Code Checker</title>
-  <link rel="shortcut icon" href="./assets/bulb.png" type="image/x-icon">
-  <link rel="stylesheet" href="./style.css">
- 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Code Checker</title>
+    <link rel="shortcut icon" href="./assets/bulb.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+
 </head>
+
 <body>
-  <div class="container">
-    <h1>COLOR CODE</h1>
+    <div class="container">
+        <h1>COLOR CODE</h1>
 
-    <div class="input-section">
-      <label for="colorInput">Enter your color code:</label>
-      <div class="input-row">
-        <input type="text" id="colorInput" placeholder="#ff0000" value="#ff0000">
-        <button class="check-btn" onclick="checkColor()">Check</button>
-        <button class="check-btn" onclick="saveColor()">Save</button>
-      </div>
+        <div class="input-section">
+            <label for="colorInput">Enter your color code:</label>
+            <div class="input-row">
+                <input type="text" id="colorInput" placeholder="#ff0000" value="#ff0000">
+                <button class="check-btn" onclick="checkColor()">Check</button>
+                <button class="check-btn" onclick="saveColor()">Save</button>
+            </div>
+        </div>
+
+        <div id="errorMsg" class="error"></div>
+
+        <div class="color-display empty" id="colorDisplay">
+            <div>Selected Color:</div>
+            <div class="color-code-display" id="colorCodeDisplay"></div>
+        </div>
+
+        <div class="color-info" id="colorInfo">
+            <div class="info-item">
+                <h3>HEX Code</h3>
+                <p id="hexValue">-</p>
+            </div>
+            <div class="info-item">
+                <h3>RGB Values</h3>
+                <p id="rgbValue">-</p>
+            </div>
+            <div class="info-item">
+                <h3>HSL Values</h3>
+                <p id="hslValue">-</p>
+            </div>
+            <div class="info-item">
+                <h3>Color Name</h3>
+                <p id="colorName">-</p>
+            </div>
+        </div>
+
+        <button class="back-btn" onclick="resetColor()">Back to Page 1</button>
+        <button class="back-btn" onclick="clearSavedColors()">Clear Saved</button>
+
+        <div class="examples">
+            <h3>Saved Colors:</h3>
+            <div id="savedColors"></div>
+
+            <h3 style="margin-top: 20px;">Example formats:</h3>
+            <p>HEX: #ff0000, #00ff00, #0000ff</p>
+            <p>RGB: rgb(255,0,0), rgb(0,255,0)</p>
+            <p>HSL: hsl(0,100%,50%), hsl(120,100%,50%)</p>
+            <p>Names: red, blue, green, orange</p>
+        </div>
     </div>
 
-    <div id="errorMsg" class="error"></div>
-
-    <div class="color-display empty" id="colorDisplay">
-      <div>Selected Color:</div>
-      <div class="color-code-display" id="colorCodeDisplay"></div>
-    </div>
-
-    <div class="color-info" id="colorInfo">
-      <div class="info-item"><h3>HEX Code</h3><p id="hexValue">-</p></div>
-      <div class="info-item"><h3>RGB Values</h3><p id="rgbValue">-</p></div>
-      <div class="info-item"><h3>HSL Values</h3><p id="hslValue">-</p></div>
-      <div class="info-item"><h3>Color Name</h3><p id="colorName">-</p></div>
-    </div>
-
-    <button class="back-btn" onclick="resetColor()">Back to Page 1</button>
-    <button class="back-btn" onclick="clearSavedColors()">Clear Saved</button>
-
-    <div class="examples">
-      <h3>Saved Colors:</h3>
-      <div id="savedColors"></div>
-
-      <h3 style="margin-top: 20px;">Example formats:</h3>
-      <p>HEX: #ff0000, #00ff00, #0000ff</p>
-      <p>RGB: rgb(255,0,0), rgb(0,255,0)</p>
-      <p>HSL: hsl(0,100%,50%), hsl(120,100%,50%)</p>
-      <p>Names: red, blue, green, orange</p>
-    </div>
-  </div>
-
-  <script src="./script.js"></script>
+    <script src="./script.js"></script>
 </body>
+
 </html>
